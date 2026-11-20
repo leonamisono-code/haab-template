@@ -227,21 +227,21 @@ header {
   z-index: 5;
   transform: translateX(2px);
   display: flex;
-  background-color: rgba(255,255,255,0.85);
-  padding: 10px;
+  background-color: rgba(0,0,0,0.6);
+  padding: 8px 10px;
   box-sizing: border-box;
 }
-.footer_btn a { width: 100%; display: block; margin: 0 7px; }
-.footer_btn img { width: 100%; height: auto; box-shadow: 1px 1px #6a6a6a; border-radius: 15px; }
+.footer_btn a { width: 100%; display: block; margin: 0 5px; }
+.footer_btn img { width: 100%; height: auto; }
 
 .main_visiual_btn {
   display: flex;
-  background-color: rgba(255,255,255,0.85);
-  padding: 10px;
+  background-color: rgba(0,0,0,0.6);
+  padding: 8px 10px;
   box-sizing: border-box;
 }
-.main_visiual_btn a { width: 100%; display: block; margin: 0 7px; }
-.main_visiual_btn img { width: 100%; height: auto; box-shadow: 1px 1px #6a6a6a; border-radius: 15px; }
+.main_visiual_btn a { width: 100%; display: block; margin: 0 5px; }
+.main_visiual_btn img { width: 100%; height: auto; }
 
 /* =========================================
    フワッとfade-in
@@ -451,6 +451,6 @@ header {
 
 @media screen and (max-width: 500px) {
   .footer_btn img, .main_visiual_btn img {
-    border-radius: 2.5vw;
+    border-radius: 0;
   }
 }
