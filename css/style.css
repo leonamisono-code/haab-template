@@ -29,13 +29,17 @@ body {
   align-items: center;
 }
 
-/* 左右を flex:1 で等幅にしてセンターカラムを常に画面中央に固定 */
-.background > div:first-child,
+/* ロゴ列は非表示（bg.webpに埋め込み済み） */
+.background > div:first-child {
+  display: none;
+}
+
+/* PCナビはabsoluteで右端に固定 → flex影響なし */
 .background > div:last-child {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .background_logo {
@@ -398,6 +402,7 @@ header {
    ========================================= */
 @media screen and (max-width: 940px) {
   .pc_global_nav { display: none; }
+  .background > div:last-child { display: none; }
   .content_wrapper header { transform: translateX(-50%); }
 }
 @media screen and (max-width: 500px) {
