@@ -25,7 +25,16 @@ body {
   background-size: cover;
   z-index: -1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 左右を flex:1 で等幅にしてセンターカラムを常に画面中央に固定 */
+.background > div:first-child,
+.background > div:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -58,6 +67,7 @@ body {
    スクロール列（中央カラム）
    ========================================= */
 .container_box {
+  flex: none;
   display: flex;
   justify-content: center;
   align-items: center;
