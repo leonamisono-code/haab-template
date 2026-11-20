@@ -19,7 +19,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../img/bg.png);
+  background-image: url(../img/bg.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,7 +145,7 @@ header {
   clip-path: circle(0% at calc(100% - 44px) 44px);
   transition: clip-path 0.7s cubic-bezier(0.4,0,0.2,1);
   z-index: 900;
-  background-image: url(../img/bg.png);
+  background-image: url(../img/bg.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -224,13 +224,12 @@ header {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  z-index: 0;
-  transform: translateX(2px);
+  z-index: 10;
 }
 .footer_btn, .main_visiual_btn {
   display: block;
   background-color: #ffffffd7;
-  padding: 8px 0;
+  padding: 0;
   box-sizing: border-box;
 }
 .footer_btn img, .main_visiual_btn img {
@@ -393,7 +392,6 @@ header {
   .background_logo { display: none; }
   .pc_global_nav { display: none; }
   .content_wrapper header { transform: translateX(-50%); }
-  .content_wrapper .footer_btn { transform: translateX(0); }
 }
 @media screen and (max-width: 500px) {
   .content_wrapper { padding-top: 80px; }
