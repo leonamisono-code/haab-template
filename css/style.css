@@ -228,16 +228,9 @@ header {
   transform: translateX(2px);
 }
 .footer_btn, .main_visiual_btn {
-  display: flex;
-  background-color: #ffffffd7;
-  padding: 10px;
-  box-sizing: border-box;
-}
-.footer_btn a, .main_visiual_btn a {
-  width: 100%;
-  height: auto;
   display: block;
-  margin: 0 7px;
+  background-color: #ffffffd7;
+  padding: 8px 0;
   box-sizing: border-box;
 }
 .footer_btn img, .main_visiual_btn img {
