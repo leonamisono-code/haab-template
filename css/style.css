@@ -215,31 +215,37 @@ header {
 /* =========================================
    固定フッターCTA（LINE/WEB 2ボタン）
    ========================================= */
-.footer_btn_wrapper { width: 100%; max-width: 500px; }
-.footer_btn {
+.footer_btn_wrapper { width: 500px; }
+.content_wrapper .footer_btn {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   width: 100%;
   max-width: 500px;
-  z-index: 5;
+  margin: 0 auto;
+  z-index: 0;
+  transform: translateX(2px);
+}
+.footer_btn, .main_visiual_btn {
   display: flex;
-  background-color: rgba(0,0,0,0.6);
-  padding: 8px 10px;
+  background-color: #ffffffd7;
+  padding: 10px;
   box-sizing: border-box;
 }
-.footer_btn a { width: 100%; display: block; margin: 0 5px; }
-.footer_btn img { width: 100%; height: auto; }
-
-.main_visiual_btn {
-  display: flex;
-  background-color: rgba(0,0,0,0.6);
-  padding: 8px 10px;
+.footer_btn a, .main_visiual_btn a {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 7px;
   box-sizing: border-box;
 }
-.main_visiual_btn a { width: 100%; display: block; margin: 0 5px; }
-.main_visiual_btn img { width: 100%; height: auto; }
+.footer_btn img, .main_visiual_btn img {
+  width: 100%;
+  height: auto;
+  box-shadow: 1px 1px #6a6a6a;
+  border-radius: 15px;
+}
 
 /* =========================================
    フワッとfade-in
@@ -447,6 +453,7 @@ header {
 
 @media screen and (max-width: 500px) {
   .footer_btn img, .main_visiual_btn img {
-    border-radius: 0;
+    box-shadow: 1px 1px #6a6a6a;
+    border-radius: 2.5vw;
   }
 }
