@@ -1,62 +1,59 @@
 @charset "UTF-8";
 
-html { font-size: 62.5%; }
-img { max-width: 100%; height: auto; display: block; }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
 
 body {
   font-family: "Noto Serif JP", serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  margin: 0;
 }
 
+html { font-size: 62.5%; }
+img { max-width: 100%; height: auto; display: block; }
+
 /* =========================================
-   固定背景（キラキラ）img/bg.webp を差し替え
+   固定背景
+   img/bg.png を差し替え
    ========================================= */
 .background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-image: url(../img/bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-/* 背景ロゴ（bg.pngにロゴが含まれる場合は display:none） */
-.background_logo {
-  display: none;
+  z-index: 0;
 }
 
 /* =========================================
    PC右側縦ナビ
    ========================================= */
-.pc_global_nav ul {
-  margin: 0;
-  padding: 0;
+.pc_global_nav_wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc((100vw - 500px) / 2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
-.pc_global_nav ul li {
-  list-style: none;
-}
-.pc_nav_title {
-  font-size: 3.0rem;
-  color: #fff;
-}
+.pc_global_nav ul { margin: 0; padding: 0; }
+.pc_global_nav ul li { list-style: none; }
+.pc_nav_title { font-size: 3.0rem; color: #fff; }
 .pc_global_nav ul li a {
   text-decoration: none !important;
   display: block;
   padding: 0.5rem;
   margin: 0.5rem 0;
   font-size: 1.6rem;
-  color: #fff;
-}
-.pc_global_nav ul li a {
   overflow: hidden;
   color: transparent;
   text-shadow: 0 -1.6em 0 #ffffff, 0 0 0 #ffffff;
@@ -70,22 +67,26 @@ body {
    スクロール列（中央カラム）
    ========================================= */
 .container_box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
   height: 100vh;
+  z-index: 1;
   overflow: hidden;
 }
 .content_wrapper {
   width: 100%;
-  max-width: 500px;
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
   position: relative;
   background-color: #ffffff;
   padding-top: 80px;
   padding-bottom: 80px;
+  box-sizing: border-box;
 }
 .content_wrapper::-webkit-scrollbar { display: none; }
 .content_inner { position: relative; }
@@ -93,18 +94,16 @@ body {
 /* =========================================
    固定ヘッダー
    ========================================= */
-.content_wrapper header {
+header {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 500px;
-  z-index: 10;
+  z-index: 100;
   background: white;
   box-sizing: border-box;
-}
-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -117,23 +116,19 @@ header {
    ハンバーガーボタン（モーフアニメ）
    ========================================= */
 .hamburger-morph {
-  top: 40px;
-  right: 20px;
   z-index: 1000;
   width: 48px;
   height: 48px;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  background-color: #fff;
   padding: 2px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
   border-radius: 30%;
 }
 .hamburger-morph__icon { width: 100%; height: 100%; }
 .hamburger-morph__line {
   fill: none;
-  stroke: #000000;
+  stroke: #000;
   stroke-width: 6;
   transition: stroke-dasharray 600ms cubic-bezier(0.4,0,0.2,1),
               stroke-dashoffset 600ms cubic-bezier(0.4,0,0.2,1);
@@ -147,13 +142,14 @@ header {
 
 /* =========================================
    ハンバーガーメニュー（円形展開）
-   img/bg.webp を差し替え（本家は bg03.png）
    ========================================= */
 .nav-morph {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 500px;
   height: 100vh;
   clip-path: circle(0% at calc(100% - 44px) 44px);
   transition: clip-path 0.7s cubic-bezier(0.4,0,0.2,1);
@@ -172,12 +168,7 @@ header {
   width: 90%;
   height: 100%;
 }
-.nav-morph__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
+.nav-morph__list { margin: 0; padding: 0; list-style: none; text-align: center; }
 .nav-morph__item {
   opacity: 0;
   transform: translateY(30px);
@@ -208,43 +199,50 @@ header {
   line-height: 35px;
   overflow: hidden;
   text-align: left;
-  border-bottom: 0.5px solid #b0b0b0 !important;
+  border-bottom: 0.5px solid #b0b0b0;
   width: 100%;
 }
 
 /* =========================================
-   固定フッターCTA（LINE/WEB 2ボタン）
+   CTAボタン（1枚画像 + 左右クリック領域）
    ========================================= */
-.footer_btn_wrapper { width: 500px; }
-.content_wrapper .footer_btn {
+.cta-wrapper {
+  position: relative;
+  display: block;
+  line-height: 0;
+}
+.cta-wrapper img { width: 100%; height: auto; display: block; }
+.cta-area {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  display: block;
+}
+.cta-area--line { left: 0; }
+.cta-area--web  { right: 0; }
+
+/* =========================================
+   固定フッターCTA
+   ========================================= */
+.footer_btn_wrapper { width: 100%; }
+.footer_btn {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
-  z-index: 0;
-  transform: translateX(2px);
-}
-.footer_btn, .main_visiual_btn {
-  display: flex;
+  z-index: 50;
   background-color: #ffffffd7;
-  padding: 10px;
+  padding: 8px 10px;
   box-sizing: border-box;
 }
-.footer_btn a, .main_visiual_btn a {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 7px;
+
+.main_visiual_btn {
+  background-color: #ffffffd7;
+  padding: 8px 10px;
   box-sizing: border-box;
-}
-.footer_btn img, .main_visiual_btn img {
-  width: 100%;
-  height: auto;
-  box-shadow: 1px 1px #6a6a6a;
-  border-radius: 15px;
 }
 
 /* =========================================
@@ -258,17 +256,8 @@ header {
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* =========================================
-   Q&A アコーディオン（sec11スタイル完全再現）
+   Q&A アコーディオン
    ========================================= */
-.sec-qa {
-  background-image: url(../img/qa-bg.png);
-  background-size: cover;
-  background-position: center;
-  padding: 30px 0 40px;
-}
-.sec-qa__title { text-align: center; margin-bottom: 20px; }
-.sec-qa__title img { margin: 0 auto; }
-
 .faq-container {
   max-width: 90%;
   margin: 0 auto;
@@ -284,7 +273,6 @@ header {
 }
 .faq-item:last-child { margin-bottom: 0; }
 .faq-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-
 .faq-heading {
   padding: 1.2rem 1.5rem;
   position: relative;
@@ -295,7 +283,6 @@ header {
   align-items: center;
   gap: 10px;
 }
-.faq-heading .q-icon { width: 34px; height: 34px; flex-shrink: 0; }
 .faq-heading p {
   flex: 1;
   font-size: 15px;
@@ -330,17 +317,12 @@ header {
 }
 
 /* =========================================
-   アクセスタブ（sec13スタイル完全再現）
+   アクセスタブ
    ========================================= */
-.sec-access { background-color: #fff; }
-.sec-access__title { text-align: center; }
-.sec-access__title img { margin: 0 auto; }
-
 .tab-list {
   display: flex;
   justify-content: space-between;
   background-color: #000;
-  padding: 0;
 }
 .tab-item {
   width: calc(100% / 3);
@@ -355,7 +337,6 @@ header {
   font-size: 14px;
   font-weight: bold;
   line-height: 1.4;
-  letter-spacing: 0.05em;
   font-family: "Noto Serif JP", serif;
 }
 .tab-item.is-active {
@@ -364,46 +345,21 @@ header {
     #EBD78E 60.09%, #FFF5DD 81.7%, #EBD78E 98.99%);
   color: #99743C;
 }
-
 .panel-list { background-color: #fff; }
-.panel-item {
-  display: none;
-  width: 100%;
-  background-color: #fff;
-  padding-bottom: 20px;
-}
-.panel-item.is-active {
-  display: block;
-  animation: panel-show 0.9s ease-in-out forwards;
-}
+.panel-item { display: none; width: 100%; background-color: #fff; padding-bottom: 20px; }
+.panel-item.is-active { display: block; animation: panel-show 0.9s ease-in-out forwards; }
 @keyframes panel-show { from { opacity: 0; } to { opacity: 1; } }
-
 .panel-clinic-name {
-  text-align: center;
-  color: #BA9B6D;
-  font-size: 20px;
-  line-height: 1.6;
-  letter-spacing: 0.1em;
-  padding: 20px 0 10px;
+  text-align: center; color: #BA9B6D; font-size: 20px;
+  line-height: 1.6; letter-spacing: 0.1em; padding: 20px 0 10px;
 }
 .panel-img { width: 80%; height: auto; margin: 0 auto; }
 .panel-img img { width: 100%; border-radius: 8px; }
 .panel-label {
-  text-align: center;
-  color: #BA9B6D;
-  font-size: 20px;
-  line-height: 1.6;
-  letter-spacing: 0.1em;
-  padding: 20px 0 8px;
+  text-align: center; color: #BA9B6D; font-size: 20px;
+  line-height: 1.6; letter-spacing: 0.1em; padding: 20px 0 8px;
 }
-.panel-text {
-  font-size: 15px;
-  line-height: 1.8;
-  letter-spacing: 0.05em;
-  width: 80%;
-  margin: 0 auto;
-  color: #333;
-}
+.panel-text { font-size: 15px; line-height: 1.8; letter-spacing: 0.05em; width: 80%; margin: 0 auto; color: #333; }
 .panel-map { width: 80%; margin: 15px auto; }
 .panel-map iframe { width: 100%; height: 220px; border: 0; display: block; border-radius: 8px; }
 
@@ -441,19 +397,11 @@ header {
 }
 
 /* スクロールマージン */
-[id^="sec"] { scroll-margin-top: 100px; }
+[id^="sec"] { scroll-margin-top: 80px; }
 
 /* =========================================
    レスポンシブ
    ========================================= */
 @media screen and (max-width: 940px) {
-  .background_logo { display: none; }
-  .pc_global_nav { display: none; }
-}
-
-@media screen and (max-width: 500px) {
-  .footer_btn img, .main_visiual_btn img {
-    box-shadow: 1px 1px #6a6a6a;
-    border-radius: 2.5vw;
-  }
+  .pc_global_nav_wrap { display: none; }
 }

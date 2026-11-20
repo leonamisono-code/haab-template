@@ -13,176 +13,166 @@
 </head>
 <body>
 
-<div class="background">
+<!-- 固定背景 -->
+<div class="background"></div>
 
-  <!-- PC左：ロゴ -->
-  <div>
-    <a href="/"><img src="img/logo-white.png" width="620" height="272" alt="HAABロゴ" class="background_logo"></a>
-  </div>
+<!-- PC右：縦ナビ -->
+<div class="pc_global_nav_wrap">
+  <nav class="pc_global_nav">
+    <ul>
+      <li class="pc_nav_title">menu</li>
+      <li><a href="#sec-cases">症例紹介</a></li>
+      <li><a href="#sec-concerns">こんなお悩みに</a></li>
+      <li><a href="#sec-about">HAABの脂肪豊胸とは</a></li>
+      <li><a href="#sec-areas">脂肪採取できる部位</a></li>
+      <li><a href="#sec-lssa">使用機器 LSSA</a></li>
+      <li><a href="#sec-commitment">4つのこだわり</a></li>
+      <li><a href="#sec-flow">施術の流れ</a></li>
+      <li><a href="#sec-price">料金案内</a></li>
+      <li><a href="#sec-faq">よくあるご質問</a></li>
+      <li><a href="#sec-risks">リスク・副作用</a></li>
+      <li><a href="#sec-clinic">クリニックのご案内</a></li>
+    </ul>
+  </nav>
+</div>
 
-  <!-- スクロール列（中央カラム） -->
-  <div class="container_box">
-    <div class="content_wrapper">
-      <div class="content_inner">
+<!-- メインコンテンツ列 -->
+<div class="container_box">
+  <div class="content_wrapper">
+    <div class="content_inner">
 
-        <!-- 固定ヘッダー -->
-        <div class="header_wrapper">
-          <header>
-            <div class="header__logo">
-              <a href="/"><img src="img/logo-black.png" alt="HAABロゴ"></a>
+      <!-- 固定ヘッダー -->
+      <header>
+        <div class="header__logo">
+          <a href="/"><img src="img/logo-black.png" alt="HAABロゴ"></a>
+        </div>
+        <button class="hamburger-morph" aria-label="メニュー" aria-controls="morph-menu" aria-expanded="false">
+          <svg class="hamburger-morph__icon" width="48" height="48" viewBox="0 0 100 100">
+            <path class="hamburger-morph__line" d="M 20,29 H 80 C 80,29 94.5,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
+            <path class="hamburger-morph__line" d="M 20,50 H 80"/>
+            <path class="hamburger-morph__line" d="M 20,71 H 80 C 80,71 94.5,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
+          </svg>
+        </button>
+        <nav id="morph-menu" class="nav-morph" aria-hidden="true">
+          <div class="nav-morph__wrapper">
+            <ul class="nav-morph__list">
+              <li class="nav-morph__item"><a href="#sec-cases"      class="nav-morph__link"><span class="nav-morph__text">症例紹介</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-concerns"   class="nav-morph__link"><span class="nav-morph__text">こんなお悩みに</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-about"      class="nav-morph__link"><span class="nav-morph__text">HAABの脂肪豊胸とは</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-areas"      class="nav-morph__link"><span class="nav-morph__text">脂肪採取できる部位</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-lssa"       class="nav-morph__link"><span class="nav-morph__text">使用機器 LSSA</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-commitment" class="nav-morph__link"><span class="nav-morph__text">4つのこだわり</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-flow"       class="nav-morph__link"><span class="nav-morph__text">施術の流れ</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-price"      class="nav-morph__link"><span class="nav-morph__text">料金案内</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-faq"        class="nav-morph__link"><span class="nav-morph__text">よくあるご質問</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-risks"      class="nav-morph__link"><span class="nav-morph__text">リスク・副作用</span></a></li>
+              <li class="nav-morph__item"><a href="#sec-clinic"     class="nav-morph__link"><span class="nav-morph__text">クリニックのご案内</span></a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+
+        <!-- FV -->
+        <div id="sec-fv">
+          <img src="img/fv.png" alt="後悔しない美しく魅せる脂肪豊胸">
+          <div class="main_visiual_btn">
+            <div class="cta-wrapper">
+              <img src="img/cta-buttons.png" alt="LINEで簡単相談・予約 / 無料カウンセリングWEB予約">
+              <a href="LINE予約URLをここに" class="cta-area cta-area--line" target="_blank" rel="noopener" aria-label="LINEで簡単相談・予約"></a>
+              <a href="WEB予約URLをここに" class="cta-area cta-area--web" target="_blank" rel="noopener" aria-label="無料カウンセリングWEB予約"></a>
             </div>
-            <button class="hamburger-morph" aria-label="メニュー" aria-controls="morph-menu" aria-expanded="false">
-              <svg class="hamburger-morph__icon" width="48" height="48" viewBox="0 0 100 100">
-                <path class="hamburger-morph__line" d="M 20,29 H 80 C 80,29 94.5,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"/>
-                <path class="hamburger-morph__line" d="M 20,50 H 80"/>
-                <path class="hamburger-morph__line" d="M 20,71 H 80 C 80,71 94.5,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"/>
-              </svg>
-            </button>
-            <nav id="morph-menu" class="nav-morph" aria-hidden="true">
-              <div class="nav-morph__wrapper">
-                <ul class="nav-morph__list">
-                  <li class="nav-morph__item"><a href="#sec-cases"      class="nav-morph__link"><span class="nav-morph__text">症例紹介</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-concerns"   class="nav-morph__link"><span class="nav-morph__text">こんなお悩みに</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-about"      class="nav-morph__link"><span class="nav-morph__text">HAABの脂肪豊胸とは</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-areas"      class="nav-morph__link"><span class="nav-morph__text">脂肪採取できる部位</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-lssa"       class="nav-morph__link"><span class="nav-morph__text">使用機器 LSSA</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-commitment" class="nav-morph__link"><span class="nav-morph__text">4つのこだわり</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-flow"       class="nav-morph__link"><span class="nav-morph__text">施術の流れ</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-price"      class="nav-morph__link"><span class="nav-morph__text">料金案内</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-faq"        class="nav-morph__link"><span class="nav-morph__text">よくあるご質問</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-risks"      class="nav-morph__link"><span class="nav-morph__text">リスク・副作用</span></a></li>
-                  <li class="nav-morph__item"><a href="#sec-clinic"     class="nav-morph__link"><span class="nav-morph__text">クリニックのご案内</span></a></li>
-                </ul>
-              </div>
-            </nav>
-          </header>
+          </div>
         </div>
 
-        <main>
-
-          <!-- FV -->
-          <div id="sec-fv">
-            <img src="img/fv.png" alt="後悔しない美しく魅せる脂肪豊胸">
-            <div class="main_visiual_btn">
-              <a href="LINE予約URLをここに" target="_blank" rel="noopener">
-                <img src="img/cta-line.png" alt="LINEで簡単相談・予約">
-              </a>
-              <a href="WEB予約URLをここに" target="_blank" rel="noopener">
-                <img src="img/cta-web.png" alt="WEB予約">
-              </a>
-            </div>
-          </div>
-
-          <!-- 症例紹介 -->
-          <div id="sec-cases">
-            <h2><span class="visually-hidden">症例紹介</span></h2>
-            <div class="fade-in"><img src="img/sec-cases.png" alt="症例紹介 たった1回でここまで変わる！"></div>
-          </div>
-
-          <!-- こんなお悩み -->
-          <div id="sec-concerns">
-            <h2><span class="visually-hidden">こんなお悩みありませんか？</span></h2>
-            <div class="fade-in"><img src="img/sec-concerns.png" alt="こんなお悩みありませんか？HAABなら"></div>
-          </div>
-
-          <!-- HAABの脂肪豊胸とは -->
-          <div id="sec-about">
-            <h2><span class="visually-hidden">HAABの脂肪豊胸とは</span></h2>
-            <div class="fade-in"><img src="img/sec-about.png" alt="HAABの脂肪豊胸とは"></div>
-          </div>
-
-          <!-- 脂肪採取できる部位 -->
-          <div id="sec-areas">
-            <h2><span class="visually-hidden">脂肪採取ができる部位</span></h2>
-            <div class="fade-in"><img src="img/sec-areas2.png" alt="脂肪採取ができる部位"></div>
-          </div>
-
-          <!-- 使用機器 LSSA -->
-          <div id="sec-lssa">
-            <h2><span class="visually-hidden">使用機器 LSSA（エルサ）</span></h2>
-            <div class="fade-in"><img src="img/sec-lssa.png" alt="HAABの脂肪吸引に使用する機器 LSSA（エルサ）韓国式ベイザー"></div>
-          </div>
-
-          <!-- 4つのこだわり -->
-          <div id="sec-commitment">
-            <h2><span class="visually-hidden">HAABの脂肪豊胸 4つのこだわり</span></h2>
-            <div class="fade-in"><img src="img/sec-commitment.png" alt="HAABの脂肪豊胸 4つのこだわり"></div>
-          </div>
-
-          <!-- 施術の流れ -->
-          <div id="sec-flow">
-            <h2><span class="visually-hidden">施術の流れ</span></h2>
-            <div class="fade-in"><img src="img/sec-flow.png" alt="施術の流れ"></div>
-          </div>
-
-          <!-- 料金案内 -->
-          <div id="sec-price">
-            <h2><span class="visually-hidden">料金案内</span></h2>
-            <div class="fade-in"><img src="img/sec-price.png" alt="料金案内 脂肪豊胸 特別モニターキャンペーン価格 348,000円〜"></div>
-          </div>
-
-          <!-- よくあるご質問 -->
-          <div id="sec-faq">
-            <h2><span class="visually-hidden">よくあるご質問</span></h2>
-            <div class="fade-in"><img src="img/sec-faq.png" alt="よくあるご質問"></div>
-          </div>
-
-          <!-- リスク・副作用 -->
-          <div id="sec-risks">
-            <h2><span class="visually-hidden">施術のリスク・副作用</span></h2>
-            <div class="fade-in"><img src="img/sec-risks.png" alt="施術のリスク・副作用"></div>
-          </div>
-
-          <!-- クリニックのご案内 -->
-          <div id="sec-clinic">
-            <h2><span class="visually-hidden">クリニックのご案内</span></h2>
-            <div class="fade-in"><img src="img/sec-clinic-info.png" alt="クリニックのご案内 東京本院・大阪梅田院・名古屋院"></div>
-          </div>
-
-        </main>
-
-        <div class="copyright-box">
-          <small>&copy;美容整形&皮膚科ならHAABクリニック</small>
+        <!-- 症例紹介 -->
+        <div id="sec-cases">
+          <h2><span class="visually-hidden">症例紹介</span></h2>
+          <div class="fade-in"><img src="img/sec-cases.png" alt="症例紹介 たった1回でここまで変わる！"></div>
         </div>
 
-      </div><!-- /.content_inner -->
-
-      <!-- 固定フッターCTA -->
-      <div class="footer_btn_wrapper">
-        <div class="footer_btn">
-          <a href="LINE予約URLをここに" target="_blank" rel="noopener">
-            <img src="img/cta-line.png" alt="LINEで簡単相談・予約">
-          </a>
-          <a href="WEB予約URLをここに" target="_blank" rel="noopener">
-            <img src="img/cta-web.png" alt="WEB予約">
-          </a>
+        <!-- こんなお悩み -->
+        <div id="sec-concerns">
+          <h2><span class="visually-hidden">こんなお悩みありませんか？</span></h2>
+          <div class="fade-in"><img src="img/sec-concerns.png" alt="こんなお悩みありませんか？HAABなら"></div>
         </div>
+
+        <!-- HAABの脂肪豊胸とは -->
+        <div id="sec-about">
+          <h2><span class="visually-hidden">HAABの脂肪豊胸とは</span></h2>
+          <div class="fade-in"><img src="img/sec-about.png" alt="HAABの脂肪豊胸とは"></div>
+        </div>
+
+        <!-- 脂肪採取できる部位 -->
+        <div id="sec-areas">
+          <h2><span class="visually-hidden">脂肪採取ができる部位</span></h2>
+          <div class="fade-in"><img src="img/sec-areas2.png" alt="脂肪採取ができる部位"></div>
+        </div>
+
+        <!-- 使用機器 LSSA -->
+        <div id="sec-lssa">
+          <h2><span class="visually-hidden">使用機器 LSSA（エルサ）</span></h2>
+          <div class="fade-in"><img src="img/sec-lssa.png" alt="HAABの脂肪吸引に使用する機器 LSSA（エルサ）韓国式ベイザー"></div>
+        </div>
+
+        <!-- 4つのこだわり -->
+        <div id="sec-commitment">
+          <h2><span class="visually-hidden">HAABの脂肪豊胸 4つのこだわり</span></h2>
+          <div class="fade-in"><img src="img/sec-commitment.png" alt="HAABの脂肪豊胸 4つのこだわり"></div>
+        </div>
+
+        <!-- 施術の流れ -->
+        <div id="sec-flow">
+          <h2><span class="visually-hidden">施術の流れ</span></h2>
+          <div class="fade-in"><img src="img/sec-flow.png" alt="施術の流れ"></div>
+        </div>
+
+        <!-- 料金案内 -->
+        <div id="sec-price">
+          <h2><span class="visually-hidden">料金案内</span></h2>
+          <div class="fade-in"><img src="img/sec-price.png" alt="料金案内 脂肪豊胸 特別モニターキャンペーン価格 348,000円〜"></div>
+        </div>
+
+        <!-- よくあるご質問 -->
+        <div id="sec-faq">
+          <h2><span class="visually-hidden">よくあるご質問</span></h2>
+          <div class="fade-in"><img src="img/sec-faq.png" alt="よくあるご質問"></div>
+        </div>
+
+        <!-- リスク・副作用 -->
+        <div id="sec-risks">
+          <h2><span class="visually-hidden">施術のリスク・副作用</span></h2>
+          <div class="fade-in"><img src="img/sec-risks.png" alt="施術のリスク・副作用"></div>
+        </div>
+
+        <!-- クリニックのご案内 -->
+        <div id="sec-clinic">
+          <h2><span class="visually-hidden">クリニックのご案内</span></h2>
+          <div class="fade-in"><img src="img/sec-clinic-info.png" alt="クリニックのご案内 東京本院・大阪梅田院・名古屋院"></div>
+        </div>
+
+      </main>
+
+      <div class="copyright-box">
+        <small>&copy;美容整形&皮膚科ならHAABクリニック</small>
       </div>
 
-    </div><!-- /.content_wrapper -->
-  </div><!-- /.container_box -->
+    </div><!-- /.content_inner -->
 
-  <!-- PC右：縦ナビ -->
-  <div>
-    <nav class="pc_global_nav">
-      <ul>
-        <li class="pc_nav_title">menu</li>
-        <li><a href="#sec-cases">症例紹介</a></li>
-        <li><a href="#sec-concerns">こんなお悩みに</a></li>
-        <li><a href="#sec-about">HAABの脂肪豊胸とは</a></li>
-        <li><a href="#sec-areas">脂肪採取できる部位</a></li>
-        <li><a href="#sec-lssa">使用機器 LSSA</a></li>
-        <li><a href="#sec-commitment">4つのこだわり</a></li>
-        <li><a href="#sec-flow">施術の流れ</a></li>
-        <li><a href="#sec-price">料金案内</a></li>
-        <li><a href="#sec-faq">よくあるご質問</a></li>
-        <li><a href="#sec-risks">リスク・副作用</a></li>
-        <li><a href="#sec-clinic">クリニックのご案内</a></li>
-      </ul>
-    </nav>
-  </div>
+    <!-- 固定フッターCTA -->
+    <div class="footer_btn_wrapper">
+      <div class="footer_btn">
+        <div class="cta-wrapper">
+          <img src="img/cta-buttons.png" alt="LINEで簡単相談・予約 / 無料カウンセリングWEB予約">
+          <a href="LINE予約URLをここに" class="cta-area cta-area--line" target="_blank" rel="noopener" aria-label="LINEで簡単相談・予約"></a>
+          <a href="WEB予約URLをここに" class="cta-area cta-area--web" target="_blank" rel="noopener" aria-label="無料カウンセリングWEB予約"></a>
+        </div>
+      </div>
+    </div>
 
-</div><!-- /.background -->
+  </div><!-- /.content_wrapper -->
+</div><!-- /.container_box -->
 
 <script src="js/common.js"></script>
 </body>
